@@ -119,19 +119,24 @@ public class ruangkelas {
 		analisis_CCTV();
 	}
 
-	public void analisis_kelistrikan() {
+	public int analisis_kelistrikan() {
+            int c=0;
 		if (ambil.getJumlah_steker() >= 4) {
 			System.out.println("sesuai");
-			if (ambil.getKondisi_steker() == 4) {
+			if (ambil.getKondisi_steker() == 1) {
+                            c++;
 				System.out.println("sesuai");
+                        }else if (ambil.getKondisi_steker()==0){
+                            System.out.println("tidak sesuai");
 				if (ambil.getPosisi_steker() == "pojok ruang"
-						&& ambil.getPosisi_steker() == "dekat dosen") {
+						|| ambil.getPosisi_steker() == "dekat dosen") {
 					System.out.println("sesuai");
 				}
 			}
 		} else {
 			System.out.println("tidak sesuai");
 		}
+            return c;
 	}
 
 	public void analisis_LCD() {
@@ -143,8 +148,7 @@ public class ruangkelas {
 			System.out.println("tidak sesuai");
 		}
 	}
-
-	public void analisis_lampu() {
+	public int analisis_lampu() {
             int c =0;
 		// int baik=18;
 		if ((ambil.getJumlah_lampu() >= 18)) {
@@ -161,6 +165,7 @@ public class ruangkelas {
 		} else {
 			System.out.println("tidak sesuai");
 		}
+            return c;
 	}
 
 	public void analisis_kipas_angin() {
