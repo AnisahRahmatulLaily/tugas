@@ -7,6 +7,8 @@ import org.omg.CORBA.PUBLIC_MEMBER;
 public class ruangkelas {
 	Scanner in = new Scanner(System.in);
 	ruang ambil = new ruang();
+        int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
+        String hasil;
 
 	public void input_identitas_ruang_kelas() {
 		System.out.println("input ruang kelas");
@@ -76,9 +78,15 @@ public class ruangkelas {
 	public void kondisi_dan_posisi_sarana() {
 		System.out.println("masukan jumlah steker atau stop kontak");
 		ambil.setJumlah_steker(in.nextInt());
-		System.out.println("masukan kondisi steker baik");
-		ambil.setKondisi_steker(in.nextInt());
-		System.out.println("posisi steker : ");
+                for(i=0;i>ambil.getJumlah_steker();i++){
+                    r=i+1;
+                    System.out.println("Kondisi steker baik/buruk : ");
+                    ambil.setKondisi_steker(in.next());
+                    if (ambil.getKondisi_steker().equalsIgnoreCase("baik")){
+                        steker++;
+                    }
+                }
+		System.out.println("posisi steker :  ");
 		ambil.setPosisi_steker(in.next());
 		analisis_kelistrikan();
 		System.out.println("input jumlah kabel LCD");
@@ -119,24 +127,13 @@ public class ruangkelas {
 		analisis_CCTV();
 	}
 
-	public int analisis_kelistrikan() {
-            int c=0;
-		if (ambil.getJumlah_steker() >= 4) {
-			System.out.println("sesuai");
-			if (ambil.getKondisi_steker() == 1) {
-                            c++;
-				System.out.println("sesuai");
-                        }else if (ambil.getKondisi_steker()==0){
-                            System.out.println("tidak sesuai");
-				if (ambil.getPosisi_steker() == "pojok ruang"
-						|| ambil.getPosisi_steker() == "dekat dosen") {
-					System.out.println("sesuai");
-				}
-			}
-		} else {
-			System.out.println("tidak sesuai");
-		}
-            return c;
+	public String analisis_kelistrikan() {
+            if (ambil.getPosisi_steker().equalsIgnoreCase("a") && ambil.getJumlah_steker() >=4 && steker==4){
+                hasil="sesuai";
+            }else{
+                hasil="tidak sesuai";
+            }return hasil;
+            
 	}
 
 	public void analisis_LCD() {

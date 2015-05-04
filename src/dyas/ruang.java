@@ -10,7 +10,7 @@ public class ruang {
     private int jumlah_pintu;
     private int jumlah_jendela;
     private int jumlah_steker;
-    private int kondisi_steker;
+    private String kondisi_steker;
     private String posisi_steker;
     private int jumlah_kabel_LCD;
     private String kondisi_kabel_LCD;
@@ -83,7 +83,7 @@ public class ruang {
         this.jumlah_steker = jumlah_steker;
     }
 
-    public void setKondisi_steker(int kondisi_steker) {
+    public void setKondisi_steker(String kondisi_steker) {
         this.kondisi_steker = kondisi_steker;
     }
 
@@ -262,7 +262,7 @@ public class ruang {
         return jumlah_steker;
     }
 
-    public int getKondisi_steker() {
+    public String getKondisi_steker() {
         return kondisi_steker;
     }
 
