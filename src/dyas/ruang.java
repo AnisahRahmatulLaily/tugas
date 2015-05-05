@@ -1,7 +1,7 @@
 package dyas;
 
 public class ruang {
-	private String nama_ruang;
+    private String nama_ruang;
     private String lokasi_ruang;
     private String fakultas;
     private int panjang_ruang;
@@ -16,10 +16,10 @@ public class ruang {
     private String kondisi_kabel_LCD;
     private String posisi_kabel_LCD;
     private int jumlah_lampu;
-    private int kondisi_lampu;
+    private String kondisi_lampu;
     private String posisi_lampu;
     private int jumlah_kipas_angin;
-    private int kondisi_kipas_angin;
+    private String kondisi_kipas_angin;
     private String posisi_kipas_angin;
     private int jumlah_AC;
     private String kondisi_AC;
@@ -27,7 +27,7 @@ public class ruang {
     private String SSID;
     private String bandwidth;
     private int jumlah_CCTV;
-    private int kondisi_CCTV;
+    private String kondisi_CCTV;
     private String posisi_CCTV;
     private String kondisi_lantai;
     private String kondisi_dinding;
@@ -107,7 +107,7 @@ public class ruang {
         this.jumlah_lampu = jumlah_lampu;
     }
 
-    public void setKondisi_lampu(int kondisi_lampu) {
+    public void setKondisi_lampu(String kondisi_lampu) {
         this.kondisi_lampu = kondisi_lampu;
     }
 
@@ -119,7 +119,7 @@ public class ruang {
         this.jumlah_kipas_angin = jumlah_kipas_angin;
     }
 
-    public void setKondisi_kipas_angin(int kondisi_kipas_angin) {
+    public void setKondisi_kipas_angin(String kondisi_kipas_angin) {
         this.kondisi_kipas_angin = kondisi_kipas_angin;
     }
 
@@ -151,7 +151,7 @@ public class ruang {
         this.jumlah_CCTV = jumlah_CCTV;
     }
 
-    public void setKondisi_CCTV(int kondisi_CCTV) {
+    public void setKondisi_CCTV(String kondisi_CCTV) {
         this.kondisi_CCTV = kondisi_CCTV;
     }
 
@@ -286,7 +286,7 @@ public class ruang {
         return jumlah_lampu;
     }
 
-    public int getKondisi_lampu() {
+    public String getKondisi_lampu() {
         return kondisi_lampu;
     }
 
@@ -298,7 +298,7 @@ public class ruang {
         return jumlah_kipas_angin;
     }
 
-    public int getKondisi_kipas_angin() {
+    public String getKondisi_kipas_angin() {
         return kondisi_kipas_angin;
     }
 
@@ -330,7 +330,7 @@ public class ruang {
         return jumlah_CCTV;
     }
 
-    public int getKondisi_CCTV() {
+    public String getKondisi_CCTV() {
         return kondisi_CCTV;
     }
 
