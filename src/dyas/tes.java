@@ -10,6 +10,7 @@ public class tes {
 	    //in.kebersihan_ruang_kelas();
 	   // in.kenyamanan_ruang_kelas();
 	   // in.keamanan_ruang();
+            in.tampil();
 	}  
 	    
 	

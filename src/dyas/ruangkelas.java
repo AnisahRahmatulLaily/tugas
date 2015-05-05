@@ -29,19 +29,19 @@ public class ruangkelas extends ruang{
 		setJumlah_kursi(in.nextInt());
 		System.out.println(+hitung_rasio_luas());
 		System.out.println("masukan jumlah pintu");
-		ambil.setJumlah_pintu(in.nextInt());
+		setJumlah_pintu(in.nextInt());
 		System.out.println("masukan jumlah jendela");
-		ambil.setJumlah_jendela(in.nextInt());
+		setJumlah_jendela(in.nextInt());
 		analisis_pintu_dan_jendela();
 	}
 
 	double hitung_luas_ruang() {
-		return ambil.getPanjang_ruang() * ambil.getLebar_ruang();
+		return getPanjang_ruang() * getLebar_ruang();
 	}
 
 	public String hitung_bentuk_ruang() {
 		String bentuk = "persegi panjang";
-		if (ambil.getPanjang_ruang() != ambil.getLebar_ruang()) {
+		if (getPanjang_ruang() != getLebar_ruang()) {
 			System.out.println(bentuk);
 			if (bentuk == "persegi panjang") {
 				hasil="sesuai";
@@ -54,7 +54,7 @@ public class ruangkelas extends ruang{
 
 	public double hitung_rasio_luas() {
 		double hasil;
-		hasil = hitung_luas_ruang() / ambil.getJumlah_kursi();
+		hasil = hitung_luas_ruang() / getJumlah_kursi();
 		if (hasil >= 0.5) {
 			System.out.println("sesuai");
 		} else {
@@ -66,7 +66,7 @@ public class ruangkelas extends ruang{
 
 	public String analisis_pintu_dan_jendela() {
             String hasil;
-		if (ambil.getJumlah_pintu() >= 2 && ambil.getJumlah_jendela() >= 1) {
+		if (getJumlah_pintu() >= 2 && getJumlah_jendela() >= 1) {
 			hasil="sesuai";
 		} else {
 			hasil="tidak sesuai";
@@ -76,86 +76,85 @@ public class ruangkelas extends ruang{
 
 	public void kondisi_dan_posisi_sarana() {
 		System.out.println("masukan jumlah steker atau stop kontak");
-		ambil.setJumlah_steker(in.nextInt());
-                for(i=0;i>ambil.getJumlah_steker();i++){
+		setJumlah_steker(in.nextInt());
+                for(i=0;i>getJumlah_steker();i++){
                     r=i+1;
                     System.out.println("Kondisi steker baik/buruk : ");
-                    ambil.setKondisi_steker(in.next());
-                    if (ambil.getKondisi_steker().equalsIgnoreCase("baik")){
+                    setKondisi_steker(in.next());
+                    if (getKondisi_steker().equalsIgnoreCase("baik")){
                         steker++;
                     }
                 }
 		System.out.println("posisi steker \n1. Di pojok Ruang dan di dekat dosen n\2. Di pojok ruang n\3. dekat dosen  ");
-		ambil.setPosisi_steker(in.next());
-		analisis_kelistrikan();
+		setPosisi_steker(in.next());
 		System.out.println("input jumlah kabel LCD");
-		ambil.setJumlah_kabel_LCD(in.nextInt());
-                for(i=0;i>ambil.getJumlah_kabel_LCD();i++){
+		setJumlah_kabel_LCD(in.nextInt());
+                for(i=0;i>getJumlah_kabel_LCD();i++){
                     r=i+1;
 		System.out.println("kondisi kabel LCD baik/ buruk");
-		ambil.setKondisi_kabel_LCD(in.next());
-                if (ambil.getKondisi_steker().equalsIgnoreCase("baik")){
+		setKondisi_kabel_LCD(in.next());
+                if (getKondisi_steker().equalsIgnoreCase("baik")){
                         LCD++;
                     }
                 }
 		System.out.println("posisi kabel LCD n\1. dekat dosen n\2. tidak dekat dosen");
-		ambil.setPosisi_kabel_LCD(in.next());
+		setPosisi_kabel_LCD(in.next());
 		System.out.println("jumlah lampu");
-		ambil.setJumlah_lampu(in.nextInt());
-                for(i=0;i>ambil.getJumlah_lampu();i++){
+		setJumlah_lampu(in.nextInt());
+                for(i=0;i>getJumlah_lampu();i++){
                     r=i+1;
 		System.out.println("kondisi lampu baik/buruk");
-		ambil.setKondisi_lampu(in.next());
-                if (ambil.getKondisi_lampu().equalsIgnoreCase("baik")){
+		setKondisi_lampu(in.next());
+                if (getKondisi_lampu().equalsIgnoreCase("baik")){
                         lampu++;
                     }
                 }
                 System.out.println("posisi :n\1. atap ruang n\2. bukan di atap ruang");
-                ambil.setPosisi_lampu(in.next());
+                setPosisi_lampu(in.next());
 		System.out.println("jumlah kipas angin");
-		ambil.setJumlah_kipas_angin(in.nextInt());
-                for(i=0;i>ambil.getJumlah_kipas_angin();i++){
+		setJumlah_kipas_angin(in.nextInt());
+                for(i=0;i>getJumlah_kipas_angin();i++){
                     r=i+1;
 		System.out.println("kondisi kipas angin ");
-		ambil.setKondisi_kipas_angin(in.next());
-		if(ambil.getKondisi_kipas_angin().equalsIgnoreCase("baik")){
+		setKondisi_kipas_angin(in.next());
+		if(getKondisi_kipas_angin().equalsIgnoreCase("baik")){
                     kipas++;
                 }
                 }
                 System.out.println("posisi kipas n\1. atap ruang n\2. bukan atap ruang ");
-                ambil.setPosisi_kipas_angin(in.next());
+                setPosisi_kipas_angin(in.next());
 		System.out.println("jumlah AC");
-		ambil.setJumlah_AC(in.nextInt());
-                for(i=0;i>ambil.getJumlah_AC();i++){
+		setJumlah_AC(in.nextInt());
+                for(i=0;i>getJumlah_AC();i++){
                     r=i+1;
 		System.out.println("kondisi AC");
-		ambil.setKondisi_AC(in.next());
-                if(ambil.getKondisi_AC().equalsIgnoreCase("baik")){
+		setKondisi_AC(in.next());
+                if(getKondisi_AC().equalsIgnoreCase("baik")){
                     AC++;
                 }}
 		System.out.println("posisi AC n\1. dibelakang atau di samping n/2. bukan dibelakang ataupun bukan disamping");
-		ambil.setPosisi_AC(in.next());
+		setPosisi_AC(in.next());
 		System.out.println("pilih SSID");
-		ambil.setSSID(in.next());
+		setSSID(in.next());
 		System.out.println("bandwidth");
-		ambil.setBandwidth(in.next());
+		setBandwidth(in.next());
 		analisis_internet();
 		System.out.println("jumlah cctv");
-		ambil.setJumlah_CCTV(in.nextInt());
-                for(i=0;i>ambil.getJumlah_CCTV();i++){
+		setJumlah_CCTV(in.nextInt());
+                for(i=0;i>getJumlah_CCTV();i++){
                     r=i+1;
 		System.out.println("kondisi baik cctv");
-		ambil.setKondisi_CCTV(in.next());
-                if(ambil.getKondisi_CCTV().equalsIgnoreCase("baik")){
+		setKondisi_CCTV(in.next());
+                if(getKondisi_CCTV().equalsIgnoreCase("baik")){
                     CCTV++;
 		System.out.println("posisi cctv n\1. depan dan belakang n\2.belakang n\3. depan n\4. bukan depan dan belakang");
-		ambil.setPosisi_CCTV(in.next());
+		setPosisi_CCTV(in.next());
 		analisis_CCTV();
                 }
                 }
         }
 	public String analisis_kelistrikan() {
-            if (ambil.getPosisi_steker().equalsIgnoreCase("1") && ambil.getJumlah_steker() >=4 && steker==4){
+            if (getPosisi_steker().equalsIgnoreCase("1") && getJumlah_steker() >=4 && steker==4){
                 hasil="sesuai";
             }else{
                 hasil="tidak sesuai";
@@ -164,14 +163,14 @@ public class ruangkelas extends ruang{
 	}
 
 	public String analisis_LCD() {
-	if (ambil.getPosisi_kabel_LCD().equalsIgnoreCase("1") && ambil.getJumlah_steker() >=1 && LCD==1){
+	if (getPosisi_kabel_LCD().equalsIgnoreCase("1") && getJumlah_steker() >=1 && LCD==1){
                 hasil="sesuai";
             }else{
                 hasil="tidak sesuai";
             }return hasil;
 	}
 	public String analisis_lampu() {
-        if (ambil.getPosisi_lampu().equalsIgnoreCase("1") && ambil.getJumlah_lampu()>=18 && lampu==18){
+        if (getPosisi_lampu().equalsIgnoreCase("1") && getJumlah_lampu()>=18 && lampu==18){
                 hasil="sesuai";
             }else{
                 hasil="tidak sesuai";
@@ -180,7 +179,7 @@ public class ruangkelas extends ruang{
 	}
 
 	public String analisis_kipas_angin() {
-	if (ambil.getPosisi_kipas_angin().equalsIgnoreCase("1") && ambil.getJumlah_lampu()>=2 && kipas==2){
+	if (getPosisi_kipas_angin().equalsIgnoreCase("1") && getJumlah_lampu()>=2 && kipas==2){
                 hasil="sesuai";
             }else{
                 hasil="tidak sesuai";
@@ -188,7 +187,7 @@ public class ruangkelas extends ruang{
 	}
 
 	public String analisis_AC() {
-	if (ambil.getPosisi_kipas_angin().equalsIgnoreCase("1") && ambil.getJumlah_lampu()>=2 && kipas==2){
+	if (getPosisi_kipas_angin().equalsIgnoreCase("1") && getJumlah_lampu()>=2 && kipas==2){
                 hasil="sesuai";
             }else{
                 hasil="tidak sesuai";
@@ -197,9 +196,9 @@ public class ruangkelas extends ruang{
 	}
 
 	public String analisis_internet() {
-		if (ambil.getSSID() == "UMM Hotspot") {
+		if (getSSID() == "UMM Hotspot") {
 			hasil="sesuai";
-			if (ambil.getBandwidth() == "bisa") {
+			if (getBandwidth() == "bisa") {
 				hasil="sesuai";
 			}
 		} else {
@@ -209,7 +208,7 @@ public class ruangkelas extends ruang{
 	}
 
 	public String analisis_CCTV() {
-	if (ambil.getPosisi_CCTV().equalsIgnoreCase("1") && ambil.getJumlah_CCTV()>=2 && CCTV==2){
+	if (getPosisi_CCTV().equalsIgnoreCase("1") && getJumlah_CCTV()>=2 && CCTV==2){
                 hasil="sesuai";
             }else{
                 hasil="tidak sesuai";
@@ -220,63 +219,63 @@ public class ruangkelas extends ruang{
 
 	public void input_lingkungan_ruang_kelas() {
 		System.out.println("kondisi lantai");
-		ambil.setKondisi_lantai(in.next());
+		setKondisi_lantai(in.next());
 		System.out.println("kondisi dinding");
-		ambil.setKondisi_dinding(in.next());
+		setKondisi_dinding(in.next());
 		System.out.println("kondisi atap");
-		ambil.setKondisi_atap(in.next());
+		setKondisi_atap(in.next());
 		System.out.println("kondisi pintu");
-		ambil.setKondisi_pintu(in.next());
+		setKondisi_pintu(in.next());
 		System.out.println("kondisi jendela");
-		ambil.setKondisi_jendela(in.next());
+		setKondisi_jendela(in.next());
 		analisis_kebersihan();
 	}
 
-	public void analisis_kebersihan() {
-		if (ambil.getKondisi_lantai() == "bersih"
-				&& ambil.getKondisi_dinding() == "bersih"
-				&& ambil.getKondisi_atap() == "bersih"
-				&& ambil.getKondisi_pintu() == "baik"
-				&& ambil.getKondisi_jendela() == "bersih") {
-			System.out.println("sesuai");
+	public String analisis_kebersihan() {
+		if (getKondisi_lantai() == "bersih"
+				&& getKondisi_dinding() == "bersih"
+				&& getKondisi_atap() == "bersih"
+				&& getKondisi_pintu() == "baik"
+				&& getKondisi_jendela() == "bersih") {
+			hasil="sesuai";
 		} else {
-			System.out.println("tidak sesuai");
-		}
+			hasil="tidak sesuai";
+		}return hasil;
 	}
 
 	public void kebersihan_ruang_kelas() {
 		System.out.println("masukan sirkulasi udara");
-		ambil.setSirkulasi_udara(in.nextLine());
+		setSirkulasi_udara(in.nextLine());
 		analisis_sirkulasi_udara();
 		System.out.println("masukan nilai pencahaan");
-		ambil.setPencahayaan(in.nextInt());
+		setPencahayaan(in.nextInt());
 		analisis_Pencahayaan();
 		System.out.println("masukan kelembapan");
-		ambil.setKelembapan(in.nextInt());
+		setKelembapan(in.nextInt());
 		System.out.println("Masukan suhu Celcius");
-		ambil.setSuhu(in.nextInt());
+		setSuhu(in.nextInt());
 		analisis_Suhu();
 
 	}
 
-	public void analisis_sirkulasi_udara() {
-		if ("lancar".equals(ambil.getSirkulasi_udara())) {
-			System.out.println("Sesuai");
+	public String analisis_sirkulasi_udara() {
+		if ("lancar".equals(getSirkulasi_udara())) {
+			hasil="Sesuai";
 		} else {
-			System.out.println("tidak sesuai");
-		}
+			hasil="tidak sesuai";
+		}return hasil;
 	}
 
-	public void analisis_Pencahayaan() {
-		if ((ambil.getPencahayaan() >= 250) && ambil.getPencahayaan() <= 350) {
-			System.out.println("sesuai");
+	public String analisis_Pencahayaan() {
+		if ((getPencahayaan() >= 250) && getPencahayaan() <= 350) {
+			hasil="sesuai";
 		} else {
-			System.out.println("tidak sesuai");
-		}
+			hasil="tidak sesuai";
+		}return hasil;
 	}
 
 	public String analisis_Kelembapan() {
-		if ((ambil.getKelembapan() >= 70) && ambil.getKelembapan() <= 80) {
+		if ((getKelembapan() >= 70) && getKelembapan() <= 80) {
 			hasil="Sesuai";
 		} else {
 			hasil="tidak sesuai";
@@ -284,7 +283,7 @@ public class ruangkelas extends ruang{
 	}
 
 	public String analisis_Suhu() {
-		if ((ambil.getSuhu() >= 25) && ambil.getSuhu() <= 35) {
+		if ((getSuhu() >= 25) && getSuhu() <= 35) {
 			hasil="sesuai";
 		} else {
 			hasil="tidak sesuai";
@@ -294,76 +293,74 @@ public class ruangkelas extends ruang{
 
 	public void kenyamanan_ruang_kelas() {
 		System.out.println("masukan kebisingan");
-		ambil.setKebisingan(in.nextInt());
+		setKebisingan(in.nextInt());
 		analisis_kebisingan();
 		System.out.println("masukan bau");
-		ambil.setBau(in.nextLine());
+		setBau(in.nextLine());
 		analisis_bau();
 		System.out.println("masukan kebocoran");
-		ambil.setKebocoran(in.nextLine());
+		setKebocoran(in.nextLine());
 		analisis_kebocoran();
 		System.out.println("masukan kerusakan");
-		ambil.setKerusakan(in.nextLine());
+		setKerusakan(in.nextLine());
 		analisis_kerusakan();
 		System.out.println("masukan keausan");
-		ambil.setKeausan(in.nextLine());
+		setKeausan(in.nextLine());
 		analisis_keausan();
 	}
 
-	public void analisis_kebisingan() {
-		if ("tidak bising".equals(ambil.getKebisingan())) {
-			System.out.println("Sesuai");
+	public String analisis_kebisingan() {
+		if ("tidak bising".equals(getKebisingan())) {
+			hasil="Sesuai";
 		} else {
-			System.out.println("tidak sesuai");
-		}
+			hasil="tidak sesuai";
+		}return hasil;
 	}
 
-	public void analisis_bau() {
-		if ("tidak bau".equals(ambil.getBau())) {
-			System.out.println("Sesuai");
+	public String analisis_bau() {
+		if ("tidak bau".equals(getBau())) {
+			hasil="Sesuai";
 		} else {
-			System.out.println("tidak sesuai");
-		}
+			hasil="tidak sesuai";
+		}return hasil;
 	}
 
-	public void analisis_kebocoran() {
-		if ("tidak bocor".equals(ambil.getKebocoran())) {
-			System.out.println("Sesuai");
+	public String analisis_kebocoran() {
+		if ("tidak bocor".equals(getKebocoran())) {
+			hasil="Sesuai";
 	} else {  		
-			System.out.println("tidak sesuai");
-		}
+			hasil="tidak sesuai";
+		}return hasil;
 	}
 
-	public void analisis_kerusakan() {
-		if ("tidak rusak".equals(ambil.getKerusakan())) {
-			System.out.println("sesuai");
+	public String analisis_kerusakan() {
+		if ("tidak rusak".equals(getKerusakan())) {
+			hasil="sesuai";
 		} else {
-			System.out.println("tidak sesuai");
-		}
+			hasil="tidak sesuai";
+		}return hasil;
 	}
 
-	public void analisis_keausan() {
-		if ("tidak aus".equals(ambil.getKeausan())) {
-			System.out.println("Sesuai");
+	public String analisis_keausan() {
+		if ("tidak aus".equals(getKeausan())) {
+			hasil="Sesuai";
 		} else {
-			System.out.println("tidak sesuai");
-		}
+			hasil="tidak sesuai";
+		}return hasil;
 	}
 
 	public void keamanan_ruang() {
 		System.out.println("input kekokohan");
-		ambil.setKekokohan(in.next());
-		analisis_kekokohan();
+		setKekokohan(in.next());
 		System.out.println("jumlah kunci pintu");
-		ambil.setJumlah_kunci(in.nextInt());
+		setJumlah_kunci(in.nextInt());
 		System.out.println("jumlah jendela");
-		analisis_kunci_pintu_jendela();
-		ambil.setJumlah_jendela(in.nextInt());
+		setJumlah_jendela(in.nextInt());
 		System.out.println("bahaya atau aman ?");
 	}
 
 	public void analisis_kekokohan() {
-		if (ambil.getKekokohan() == "kokoh") {
+		if (getKekokohan() == "kokoh") {
 			System.out.println("sesuai");
 		} else {
 			System.out.println("tidak sesuai");
@@ -371,7 +368,7 @@ public class ruangkelas extends ruang{
 	}
 
 	public void analisis_kunci_pintu_jendela() {
-		if (getJumlah_kunci() != 0 && ambil.getJumlah_jendela() != 0) {
+		if (getJumlah_kunci() != 0 && getJumlah_jendela() != 0) {
 			System.out.println("sesuai");
 		} else {
 			System.out.println("tidak sesuai");
@@ -392,5 +389,36 @@ public class ruangkelas extends ruang{
             System.out.println("lokasi:"+super.getLokasi_ruang());
             System.out.println("fakultas : "+super.getFakultas());
             System.out.println("panjang ruang :"+super.getPanjang_ruang());
+            System.out.println("lebar ruang :"+super.getLebar_ruang());
+            System.out.println("luas ruang : "+this.hitung_luas_ruang());
+            System.out.println("bentuk ruang :" +this.hitung_bentuk_ruang());
+            System.out.println("jumlah kursi di dalam ruang : "+super.getJumlah_kursi());
+            System.out.println("rasio luas ruang :" +this.hitung_rasio_luas());
+            System.out.println("jumlah pintu : "+super.getJumlah_pintu());
+            System.out.println("jumlah jendela :"+super.getJumlah_jendela());
+            System.out.println("analisis pintu dan jendela : "+this.analisis_pintu_dan_jendela());
+            System.out.println("jumlah steker : "+super.getJumlah_steker());
+            System.out.println("kondisi steker "+super.getKondisi_steker());
+            System.out.println("posisi steker :"+super.getPosisi_steker());
+            System.out.println("analisis kelistrikan "+ this.analisis_kelistrikan());
+            System.out.println("jumlah kabel LCD : "+super.getJumlah_kabel_LCD());
+            System.out.println("kondisi kabel LCD : "+super.getKondisi_kabel_LCD());
+            System.out.println("posisi kabel LCD : "+super.getPosisi_kabel_LCD());
+            System.out.println("analisis kabel LCD : "+this.analisis_LCD());
+            System.out.println("jumlah lampu dalam ruang : "+ super.getJumlah_lampu());
+            System.out.println("kondisi lampu dalam ruang : "+super.getKondisi_lampu());
+            System.out.println("posisi lampu dalam ruang: "+super.getKondisi_lampu());
+            System.out.println("analisis lampu : "+this.analisis_lampu());
+            System.out.println("jumlah kipas angin : "+super.getJumlah_kipas_angin());
+            System.out.println("kondisi kipas angin :"+ super.getKondisi_kipas_angin());
+            System.out.println("posisi kipas angin dalam ruang : " +super.getKondisi_kipas_angin());
+            System.out.println("analisis kipas angin :"+this.analisis_kipas_angin());
+            System.out.println("jumlah AC dalam ruangan : "+super.getJumlah_AC());
+            System.out.println("kondisi AC dalam ruangan:  "+super.getKondisi_AC());
+            System.out.println("posisi AC dalam ruangan : "+super.getPosisi_AC());
+            System.out.println("analisis AC dalam ruang : "+ this.analisis_AC());
+            System.out.println("inputan SSID : "+super.getSSID());
+            System.out.println("inputan bandwidth :"+super.getBandwidth());
+            System.out.println("analisis internet : "+this.analisis_internet());
         }
 }
