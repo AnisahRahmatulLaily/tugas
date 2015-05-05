@@ -11,6 +11,8 @@ package dyas;
  * @author TOSHIBA
  */
 public class kondisiruang extends ruangsuper{
+    int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
+        String hasil;
     private int panjang_ruang;
     private int lebar_ruang;
     private int jumlah_kursi;
@@ -69,5 +71,47 @@ public class kondisiruang extends ruangsuper{
 	System.out.println("masukan jumlah jendela");
 	setJumlah_jendela(in.nextInt());
     }
+    public void input_kondisi_ruang_kelas() {
+		System.out.println("masukan panjang");
+		setPanjang_ruang(in.nextInt());
+		System.out.println("masukan lebar");
+		setLebar_ruang(in.nextInt());
+		System.out.println(+hitung_luas_ruang());
+		System.out.println("masukan jumlah kursi");
+		setJumlah_kursi(in.nextInt());
+		System.out.println(+hitung_rasio_luas());
+		System.out.println("masukan jumlah pintu");
+		setJumlah_pintu(in.nextInt());
+		System.out.println("masukan jumlah jendela");
+		setJumlah_jendela(in.nextInt());
 
+}
+    double hitung_luas_ruang() {
+		return getPanjang_ruang() * getLebar_ruang();
+	}
+
+	public String hitung_bentuk_ruang() {
+		String bentuk = "persegi panjang";
+		if (getPanjang_ruang() != getLebar_ruang()) {
+			System.out.println(bentuk);
+			if (bentuk == "persegi panjang") {
+				hasil="sesuai";
+			}
+		} else {
+			hasil="bentuk tidak sesuai";
+		}
+            return hasil;
+	}
+
+	public double hitung_rasio_luas() {
+		double hasil;
+		hasil = hitung_luas_ruang() / getJumlah_kursi();
+		if (hasil >= 0.5) {
+			System.out.println("sesuai");
+		} else {
+			System.out.println("tidak sesuai kembali memasukan data");
+			input_kondisi_ruang_kelas();
+		}
+		return hasil;
+	}
 }
