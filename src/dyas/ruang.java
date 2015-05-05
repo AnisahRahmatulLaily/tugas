@@ -1,6 +1,6 @@
 package dyas;
 
-public class ruang {
+public abstract class ruang {
     private String nama_ruang;
     private String lokasi_ruang;
     private String fakultas;
@@ -404,5 +404,8 @@ public class ruang {
     public int getJumlah_kunci() {
         return jumlah_kunci;
     }
+    abstract public void input_identitas_ruang_kelas();
+   // abstract public void input_kondisi_ruang_kelas();
+    //abstract public void input_lingkungan_ruang_kelas();
     
 }

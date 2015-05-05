@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-public class ruangkelas extends ruang{
+abstract public class ruangkelas extends ruang{
 	Scanner in = new Scanner(System.in);
 	//ruang ambil = new ruang();
         int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
         String hasil;
-
+@Override
 	public void input_identitas_ruang_kelas() {
 		System.out.println("input ruang kelas");
 		setNama_ruang(in.next());
@@ -18,7 +18,6 @@ public class ruangkelas extends ruang{
 		System.out.println("pilih fakultas");
 		setFakultas(in.next());
 	}
-
 	public void input_kondisi_ruang_kelas() {
 		System.out.println("masukan panjang");
 		setPanjang_ruang(in.nextInt());
@@ -216,7 +215,6 @@ public class ruangkelas extends ruang{
         return hasil;
 
 	}
-
 	public void input_lingkungan_ruang_kelas() {
 		System.out.println("kondisi lantai");
 		setKondisi_lantai(in.next());
