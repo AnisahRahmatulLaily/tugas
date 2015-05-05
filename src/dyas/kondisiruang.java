@@ -10,9 +10,7 @@ package dyas;
  *
  * @author TOSHIBA
  */
-public class kondisiruang extends ruangsuper{
-    int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
-        String hasil;
+public abstract class kondisiruang extends ruangsuper{
     private int panjang_ruang;
     private int lebar_ruang;
     private int jumlah_kursi;
@@ -114,4 +112,5 @@ public class kondisiruang extends ruangsuper{
 		}
 		return hasil;
 	}
+        
 }
