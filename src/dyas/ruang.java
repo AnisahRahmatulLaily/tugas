@@ -415,8 +415,8 @@ public class ruang {
         setPanjang_ruang(panjang_ruang);
         setLebar_ruang(lebar_ruang);
         setJumlah_kursi(jumlah_kursi);
-        setJumlah_pintu(jumlah_pintu);
-        setJumlah_jendela(jumlah_jendela);
+        setJumlah_pintu(pintu);
+        setJumlah_jendela(jendela);
     }
     public ruang(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
             String kondisi_kabel_LCD, String posisi_kabel_LCD, int jumlah_lampu,String kondisi_lampu ,

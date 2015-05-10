@@ -2,8 +2,8 @@ package dyas;
 
 import java.util.Scanner;
 
-public class control {
-    in_out o=new in_out();
+public  class control {
+    in_out o=new in_out() {};
     ruang ru = new ruang();
     //ru = i.getruang();
     Scanner in = new Scanner(System.in);
@@ -48,14 +48,6 @@ public class control {
             return hasil ;
 	}
       public String analisis_kelistrikan() {
-          for(i=0;i>ru.getJumlah_steker();i++){
-                    r=i+1;
-                    System.out.println("Kondisi steker baik/buruk : ");
-                    ru.setKondisi_steker(in.next());
-                    if (ru.getKondisi_steker().equalsIgnoreCase("baik")){
-                        steker++;
-                    }
-                }
             if (ru.getPosisi_steker().equalsIgnoreCase("1") && ru.getJumlah_steker() >=4 && steker ==4){
                 hasil="sesuai";
             }else{

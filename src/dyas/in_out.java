@@ -1,42 +1,53 @@
 package dyas;
 
 import java.util.Scanner;
-public class in_out  {
+public abstract class in_out extends super_tb {
     Scanner in = new Scanner(System.in);
     ruang d;
-    //int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
-    public void input_identitas_ruang_kelas() {
+    int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
+    @Override
+    public void input_identitas_ruang_kelas(String nama_ruang, String lokasi_ruang, String fakultas) {
 		System.out.println("input ruang kelas");
-		d.setNama_ruang(in.next());
+		nama_ruang = in.next();
 		System.out.println("input lokasi ruang kelas");
-		d.setLokasi_ruang(in.next());
+		lokasi_ruang=in.next();
 		System.out.println("pilih fakultas");
-		d.setFakultas(in.next());
+		fakultas = in.next();
      d=new ruang(d.getNama_ruang(),d.getLokasi_ruang(),d.getFakultas());
     }
-    
-    public void input_kondisi_ruang_kelas() {
+    public void input_kondisi_ruang_kelas(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela) {
 		System.out.println("masukan panjang");
-		d.setPanjang_ruang(in.nextInt());
+		panjang_ruang = in.nextInt();
 		System.out.println("masukan lebar");
-		d.setLebar_ruang(in.nextInt());
+		lebar_ruang = in.nextInt();
 		System.out.println("masukan jumlah kursi");
-		d.setJumlah_kursi(in.nextInt());
+		jumlah_kursi = in.nextInt();
 		System.out.println("masukan jumlah pintu");
-		d.setJumlah_pintu(in.nextInt());
+		pintu = in.nextInt();
 		System.out.println("masukan jumlah jendela");
-		d.setJumlah_jendela(in.nextInt());
+		jendela = in.nextInt();
                 d=new ruang (d.getPanjang_ruang(),d.getLebar_ruang(),d.getJumlah_kursi(),d.getJumlah_pintu(),d.getJumlah_jendela());
 	}
-    public void kondisi_dan_posisi_sarana() {
+    public void kondisi_dan_posisi_sarana(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
+            String kondisi_kabel_LCD, String posisi_kabel_LCD, int jumlah_lampu,String kondisi_lampu ,
+            String posisi_lampu, int jumlah_kipas_angin, String kondisi_kipas_angin, String posisi_kipas_angin,
+            int jumlah_AC, String kondisi_AC,String posisi_AC,String SSID, String bandwidth, int jumlah_CCTV, String kondisi_CCTV, String posisi_CCTV) {
 		System.out.println("masukan jumlah steker atau stop kontak");
-		d.setJumlah_steker(in.nextInt());
+		jumlah_steker = in.nextInt();
+                for(i=0;i<d.getJumlah_steker();i++){
+                    r=i+1;
+                    System.out.println("Kondisi steker baik/buruk ke  : "+r);
+                    d.setKondisi_steker(in.next());
+                    if (d.getKondisi_steker().equalsIgnoreCase("baik")){
+                        steker++;
+                    }
+                }
 		System.out.println("posisi steker \n1. Di pojok Ruang dan di dekat dosen n\2. Di pojok ruang n\3. dekat dosen  ");
-		d.setPosisi_steker(in.next());
+		posisi_steker = in.next();
 		System.out.println("input jumlah kabel LCD");
-		d.setJumlah_kabel_LCD(in.nextInt());
+		jumlah_kabel_LCD = in.nextInt();
 		System.out.println("posisi kabel LCD n\1. dekat dosen n\2. tidak dekat dosen");
-		d.setPosisi_kabel_LCD(in.next());
+		posisi_kabel_LCD 
 		System.out.println("jumlah lampu");
 		d.setJumlah_lampu(in.nextInt());
                 System.out.println("posisi :n\1. atap ruang n\2. bukan di atap ruang");

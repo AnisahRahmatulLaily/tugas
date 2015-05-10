@@ -76,8 +76,8 @@ import org.omg.CORBA.PUBLIC_MEMBER;
 	public void kondisi_dan_posisi_sarana() {
 		System.out.println("masukan jumlah steker atau stop kontak");
 		setJumlah_steker(in.nextInt());
-                for(i=0;i>getJumlah_steker();i++){
-                    r=i+1;
+                for(i=1;i>getJumlah_steker();i++){
+                    //r=i+1;
                     System.out.println("Kondisi steker baik/buruk : ");
                     setKondisi_steker(in.next());
                     if (getKondisi_steker().equalsIgnoreCase("baik")){
