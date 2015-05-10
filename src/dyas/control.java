@@ -2,13 +2,16 @@ package dyas;
 
 import java.util.Scanner;
 
-public  class control {
-    in_out o=new in_out() {};
-    ruang ru = new ruang();
+public abstract class control extends in_out{
+    
+    
+    ruang ru = new ruang() {};
     //ru = i.getruang();
     Scanner in = new Scanner(System.in);
     String hasil;
     int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
+    public  void analisis_hitung_ruang (){
+    }
     double hitung_luas_ruang() {
 		return ru.getPanjang_ruang() * ru.getLebar_ruang();
 	}
@@ -57,14 +60,6 @@ public  class control {
 	}
 
 	public String analisis_LCD() {
-            for(i=0;i>ru.getJumlah_kabel_LCD();i++){
-                    r=i+1;
-		System.out.println("kondisi kabel LCD baik/ buruk");
-		ru.setKondisi_kabel_LCD(in.next());
-                if (ru.getKondisi_steker().equalsIgnoreCase("baik")){
-                        LCD++;
-                    }
-                }
 	if (ru.getPosisi_kabel_LCD().equalsIgnoreCase("1") && ru.getJumlah_steker() >=1 && LCD==1){
                 hasil="sesuai";
             }else{
@@ -72,14 +67,6 @@ public  class control {
             }return hasil;
 	}
 	public String analisis_lampu() {
-            for(i=0;i>ru.getJumlah_lampu();i++){
-                    r=i+1;
-		System.out.println("kondisi lampu baik/buruk");
-		ru.setKondisi_lampu(in.next());
-                if (ru.getKondisi_lampu().equalsIgnoreCase("baik")){
-                        lampu++;
-                    }
-                }
         if (ru.getPosisi_lampu().equalsIgnoreCase("1") && ru.getJumlah_lampu()>=18 && lampu==18){
                 hasil="sesuai";
             }else{
@@ -89,14 +76,6 @@ public  class control {
 	}
 
 	public String analisis_kipas_angin() {
-            for(i=0;i>ru.getJumlah_kipas_angin();i++){
-                    r=i+1;
-		System.out.println("kondisi kipas angin ");
-		ru.setKondisi_kipas_angin(in.next());
-		if(ru.getKondisi_kipas_angin().equalsIgnoreCase("baik")){
-                    kipas++;
-                }
-                }
 	if (ru.getPosisi_kipas_angin().equalsIgnoreCase("1") && ru.getJumlah_lampu()>=2 && kipas==2){
                 hasil="sesuai";
             }else{
@@ -105,13 +84,6 @@ public  class control {
 	}
 
 	public String analisis_AC() {
-            for(i=0;i>ru.getJumlah_AC();i++){
-                    r=i+1;
-		System.out.println("kondisi AC");
-		ru.setKondisi_AC(in.next());
-                if(ru.getKondisi_AC().equalsIgnoreCase("baik")){
-                    AC++;
-                }}
 	if (ru.getPosisi_kipas_angin().equalsIgnoreCase("1") && ru.getJumlah_lampu()>=2 && kipas==2){
                 hasil="sesuai";
             }else{
@@ -134,14 +106,6 @@ public  class control {
 	}
 
 	public String analisis_CCTV() {
-            for(i=0;i>ru.getJumlah_CCTV();i++){
-                    r=i+1;
-		System.out.println("kondisi baik cctv");
-		ru.setKondisi_CCTV(in.next());
-                if(ru.getKondisi_CCTV().equalsIgnoreCase("baik")){
-                    CCTV++;
-                }
-                }
 	if (ru.getPosisi_CCTV().equalsIgnoreCase("1") && ru.getJumlah_CCTV()>=2 && CCTV==2){
                 hasil="sesuai";
             }else{

@@ -1,6 +1,6 @@
 package dyas;
 
-public class ruang {
+public abstract class ruang {
     private String nama_ruang;
     private String lokasi_ruang;
     private String fakultas;
@@ -54,7 +54,7 @@ public class ruang {
     }
 
     public void setLokasi_ruang(String lokasi_ruang) {
-        this.lokasi_ruang = lokasi_ruang;
+      this.lokasi_ruang = lokasi_ruang;
     }
 
     public void setFakultas(String fakultas) {
@@ -406,70 +406,71 @@ public class ruang {
     public int getJumlah_kunci() {
         return jumlah_kunci;
     }
-    public ruang (String nama_ruang, String lokasi_ruang, String fakultas){
-        setNama_ruang(nama_ruang);
-        setLokasi_ruang(lokasi_ruang);
-        setFakultas(fakultas);
+    void setdata (String nama_ruang, String lokasi_ruang, String fakultas){
+        this.nama_ruang = nama_ruang;
+        this.lokasi_ruang=lokasi_ruang;
+        this.fakultas=fakultas;
     }
-    public ruang(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela){
-        setPanjang_ruang(panjang_ruang);
-        setLebar_ruang(lebar_ruang);
-        setJumlah_kursi(jumlah_kursi);
-        setJumlah_pintu(pintu);
-        setJumlah_jendela(jendela);
+    
+   void setdata(int panjang_ruang, int lebar_ruang, int jumlah_kursi, int pintu, int jendela){
+        this.panjang_ruang= panjang_ruang;
+        this.lebar_ruang=lebar_ruang;
+        this.jumlah_kursi = jumlah_kursi;
+        this.jumlah_pintu = pintu;
+        this.jumlah_jendela=jendela;
     }
-    public ruang(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
+    void setdata(int jumlah_steker, String kondisi_steker, String posisi_steker, int jumlah_kabel_LCD, 
             String kondisi_kabel_LCD, String posisi_kabel_LCD, int jumlah_lampu,String kondisi_lampu ,
             String posisi_lampu, int jumlah_kipas_angin, String kondisi_kipas_angin, String posisi_kipas_angin,
             int jumlah_AC, String kondisi_AC,String posisi_AC,String SSID, String bandwidth, int jumlah_CCTV, String kondisi_CCTV, String posisi_CCTV){
-        setJumlah_steker(jumlah_steker);
-        setKondisi_steker(kondisi_steker);
-        setPosisi_steker(posisi_steker);
-        setJumlah_kabel_LCD(jumlah_kabel_LCD);
-        setKondisi_kabel_LCD(kondisi_kabel_LCD);
-        setPosisi_kabel_LCD(posisi_kabel_LCD);
-        setJumlah_lampu(jumlah_lampu);
-        setKondisi_lampu(kondisi_lampu);
-        setPosisi_lampu(posisi_lampu);
-        setJumlah_kipas_angin(jumlah_kipas_angin);
-        setKondisi_kipas_angin(kondisi_kipas_angin);
-        setPosisi_kipas_angin(posisi_kipas_angin);
-        setJumlah_AC(jumlah_AC);
-        setKondisi_AC(kondisi_AC);
-        setPosisi_AC(posisi_AC);
-        setSSID(SSID);
-        setBandwidth(bandwidth);
-        setJumlah_CCTV(jumlah_CCTV);
-        setKondisi_CCTV(kondisi_CCTV);
-        setPosisi_CCTV(posisi_CCTV);
+        this.jumlah_steker=jumlah_steker;
+        this.kondisi_steker=kondisi_steker;
+        this.posisi_steker=posisi_steker;
+        this.jumlah_kabel_LCD=jumlah_kabel_LCD;
+        this.kondisi_kabel_LCD=kondisi_kabel_LCD;
+        this.posisi_kabel_LCD=posisi_kabel_LCD;
+        this.jumlah_lampu=jumlah_lampu;
+        this.kondisi_lampu=kondisi_lampu;
+        this.posisi_lampu=posisi_lampu;
+        this.jumlah_kipas_angin=jumlah_kipas_angin;
+        this.kondisi_kipas_angin=kondisi_kipas_angin;
+        this.posisi_kipas_angin=posisi_kipas_angin;
+        this.jumlah_AC=jumlah_AC;
+        this.kondisi_AC=kondisi_AC;
+        this.posisi_AC=posisi_AC;
+        this.SSID=SSID;
+        this.bandwidth=bandwidth;
+        this.jumlah_CCTV=jumlah_CCTV;
+        this.kondisi_CCTV=kondisi_CCTV;
+        this.posisi_CCTV=posisi_CCTV;
     }
-    public ruang (String kondisi_lantai, String kondisi_dinding, String kondisi_atap, String kondisi_pintu, String kondisi_jendela){
-        setKondisi_lantai(kondisi_lantai);
-        setKondisi_dinding(kondisi_dinding);
-        setKondisi_atap(kondisi_atap);
-        setKondisi_pintu(kondisi_pintu);
-        setKondisi_jendela(kondisi_jendela);
+    void setdata (String kondisi_lantai, String kondisi_dinding, String kondisi_atap, String kondisi_pintu, String kondisi_jendela){
+        this.kondisi_lantai=kondisi_lantai;
+        this.kondisi_dinding=kondisi_dinding;
+        this.kondisi_atap=kondisi_atap;
+        this.kondisi_pintu=kondisi_pintu;
+        this.kondisi_jendela=kondisi_jendela;
     }
-    public ruang(String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu){
-        setSirkulasi_udara(sirkulasi_udara);
-        setPencahayaan(pencahayaan);
-        setKelembapan(kelembapan);
-        setSuhu(suhu);
+    void setdata (String sirkulasi_udara, int pencahayaan, int kelembapan, int suhu){
+        this.sirkulasi_udara=sirkulasi_udara;
+        this.pencahayaan=pencahayaan;
+        this.kelembapan=kelembapan;
+        this.suhu=suhu;
     }
-    public ruang(int kebisingan, String bau, String kebocoran, String kerusakan, String keausan){
-        setKebisingan(kebisingan);
-        setBau(bau);
-        setKebocoran(kebocoran);
-        setKerusakan(kerusakan);
-        setKeausan(keausan);
+    void setdata(int kebisingan, String bau, String kebocoran, String kerusakan, String keausan){
+        this.kebisingan=kebisingan;
+        this.bau=bau;
+        this.kebocoran=kebocoran;
+        this.kerusakan=kerusakan;
+        this.keausan=keausan;
     }
-    public ruang(String kekokohan, int jumlah_kunci, int jumlah_jendela, String bahaya){
-        setKekokohan(kekokohan);
-        setJumlah_kunci(jumlah_kunci);
-        setJumlah_jendela(jumlah_jendela);
-        setBahaya(bahaya);
+    void setdata(String kekokohan, int jumlah_kunci, int jumlah_jendela, String bahaya){
+        this.kekokohan=kekokohan;
+        this.jumlah_kunci=jumlah_kunci;
+        this.jumlah_jendela=jumlah_jendela;
+        this.bahaya=bahaya;
     }
     public ruang(){
     }
-   // abstract public void input_identitas_ruang_kelas(); 
+    //abstract public void input_identitas_ruang_kelas(); 
 }
