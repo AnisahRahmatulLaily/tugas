@@ -1,5 +1,7 @@
 package dyas;
 
+import coba_tb.ruangkelas;
+
 public class tes {
 	public static void main(String[] args) {       
 	    ruangkelas in = new ruangkelas() {};
