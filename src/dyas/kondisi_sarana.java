@@ -192,6 +192,14 @@ public abstract class kondisi_sarana extends ruangsuper{
         return posisi_CCTV;
     }
 @Override
+public void input_identitas(String nama,String lokasi, String fakultas){
+    System.out.println("input ruang kelas");
+    setNama_ruang(in.next());
+    System.out.println("input lokasi ruang kelas");
+    setLokasi_ruang(in.next());
+    System.out.println("pilih fakultas");
+    setFakultas(in.next());   
+}
 public void kondisi_dan_posisi_sarana() {
 		System.out.println("masukan jumlah steker atau stop kontak");
 		setJumlah_steker(in.nextInt());

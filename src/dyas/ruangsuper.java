@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public abstract class ruangsuper {
     int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
-        String hasil;
+    String hasil;
     Scanner in = new Scanner(System.in);
     private String nama_ruang;
     private String lokasi_ruang;
@@ -44,6 +44,8 @@ public abstract class ruangsuper {
     public void setFakultas(String fakultas) {
         this.fakultas = fakultas;
     }
-    abstract public void input_identitas_ruang_kelas();
-    abstract public void kondisi_dan_posisi_sarana();
+    abstract public void input_identitas(String nama,String lokasi, String fakultas);
+    //abstract public void input_identitas_ruang_kelas();
+    //abstract public void kondisi_dan_posisi_sarana();
+    
 }

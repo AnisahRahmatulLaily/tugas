@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-abstract public class ruangkelas extends ruang{
+ public class ruangkelas{
 	Scanner in = new Scanner(System.in);
 	//ruang ambil = new ruang();
         int i,r,LCD=0,AC=0,lampu=0, kipas=0,steker=0,CCTV=0;
         String hasil;
-@Override
+//@Override
 	public void input_identitas_ruang_kelas() {
 		System.out.println("input ruang kelas");
 		setNama_ruang(in.next());

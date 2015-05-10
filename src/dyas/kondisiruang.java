@@ -57,6 +57,14 @@ public abstract class kondisiruang extends ruangsuper{
         this.jumlah_jendela = jumlah_jendela;
     }
     @Override
+    public void input_identitas(String nama,String lokasi, String fakultas){
+        System.out.println("input ruang kelas");
+	setNama_ruang(in.next());
+	System.out.println("input lokasi ruang kelas");
+	setLokasi_ruang(in.next());
+	System.out.println("pilih fakultas");
+	setFakultas(in.next());
+    }
     public void input_identitas_ruang_kelas(){
         System.out.println("masukan panjang");
 	setPanjang_ruang(in.nextInt());
@@ -69,21 +77,7 @@ public abstract class kondisiruang extends ruangsuper{
 	System.out.println("masukan jumlah jendela");
 	setJumlah_jendela(in.nextInt());
     }
-    public void input_kondisi_ruang_kelas() {
-		System.out.println("masukan panjang");
-		setPanjang_ruang(in.nextInt());
-		System.out.println("masukan lebar");
-		setLebar_ruang(in.nextInt());
-		System.out.println(+hitung_luas_ruang());
-		System.out.println("masukan jumlah kursi");
-		setJumlah_kursi(in.nextInt());
-		System.out.println(+hitung_rasio_luas());
-		System.out.println("masukan jumlah pintu");
-		setJumlah_pintu(in.nextInt());
-		System.out.println("masukan jumlah jendela");
-		setJumlah_jendela(in.nextInt());
-
-}
+    
     double hitung_luas_ruang() {
 		return getPanjang_ruang() * getLebar_ruang();
 	}
@@ -107,8 +101,7 @@ public abstract class kondisiruang extends ruangsuper{
 		if (hasil >= 0.5) {
 			System.out.println("sesuai");
 		} else {
-			System.out.println("tidak sesuai kembali memasukan data");
-			input_kondisi_ruang_kelas();
+			System.out.println("tidak sesuai");
 		}
 		return hasil;
 	}
